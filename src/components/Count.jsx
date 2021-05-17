@@ -5,7 +5,7 @@ const render = {
     count2: 0,
 };
 
-export default function Count({id, value}) {
+export default React.memo(function Count({id, value}) {
     console.warn(`Count${id} render: ${++render[`count${id}`]}`);
 
     return (
@@ -13,4 +13,4 @@ export default function Count({id, value}) {
             <h1 className="cyan">{value}</h1>
         </div>
     );
-};
+});
